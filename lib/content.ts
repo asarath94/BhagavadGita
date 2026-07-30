@@ -45,3 +45,15 @@ export function getVerse(chapter: number, id: string): Verse | null {
   const content = loadChapterContent(chapter);
   return content?.find((v) => v.id === id) ?? null;
 }
+
+export function getAdjacentVerses(
+  chapter: number,
+  id: string,
+): { prev: VerseIndexEntry | null; next: VerseIndexEntry | null } {
+  const i = verseIndex.findIndex((v) => v.chapter === chapter && v.id === id);
+  if (i === -1) return { prev: null, next: null };
+  return {
+    prev: i > 0 ? verseIndex[i - 1] : null,
+    next: i < verseIndex.length - 1 ? verseIndex[i + 1] : null,
+  };
+}

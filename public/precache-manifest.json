@@ -3,6 +3,7 @@
   "urls": [
     "/",
     "/chapters",
+    "/search-index.json",
     "/chapters/1",
     "/chapters/1/1.1",
     "/chapters/1/1.2",

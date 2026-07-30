@@ -19,7 +19,8 @@ const chapters = Array.from(new Set(verseIndex.map((v) => v.chapter))).sort(
   (a, b) => a - b,
 );
 
-const urls = new Set(["/", "/chapters"]);
+const urls = new Set(["/", "/chapters", "/search-index.json"]);
+const searchIndex = [];
 let hashInput = verseIndexBytes;
 
 for (const chapter of chapters) {
@@ -31,6 +32,12 @@ for (const chapter of chapters) {
   const verses = JSON.parse(bytes.toString("utf-8"));
   for (const v of verses) {
     urls.add(`/chapters/${chapter}/${v.id}`);
+    searchIndex.push({
+      chapter,
+      id: v.id,
+      label: v.label,
+      translation: v.translation,
+    });
   }
 }
 
@@ -46,7 +53,12 @@ fs.writeFileSync(
   path.join(root, "public", "precache-manifest.json"),
   JSON.stringify(manifest, null, 2),
 );
+fs.writeFileSync(
+  path.join(root, "public", "search-index.json"),
+  JSON.stringify(searchIndex),
+);
 
 console.log(
   `precache-manifest.json: ${manifest.urls.length} urls, version ${version}`,
 );
+console.log(`search-index.json: ${searchIndex.length} verses`);

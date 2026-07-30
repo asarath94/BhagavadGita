@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getChapterNumbers, getVerse, getVerseIndexForChapter } from "@/lib/content";
+import {
+  getAdjacentVerses,
+  getChapterNumbers,
+  getVerse,
+  getVerseIndexForChapter,
+} from "@/lib/content";
 import { BookmarkSaver } from "./BookmarkSaver";
 
 export default async function VersePage({
@@ -20,6 +25,7 @@ export default async function VersePage({
   if (!indexEntry) notFound();
 
   const verse = getVerse(chapterNum, id);
+  const { prev, next } = getAdjacentVerses(chapterNum, id);
 
   return (
     <main className="container verse-detail">
@@ -51,6 +57,38 @@ export default async function VersePage({
           This verse hasn&apos;t been transcribed yet. Check back soon.
         </p>
       )}
+      <nav className="verse-nav" aria-label="Verse navigation">
+        {prev ? (
+          <Link
+            href={`/chapters/${prev.chapter}/${prev.id}`}
+            className="verse-nav-btn verse-nav-prev"
+          >
+            <span className="verse-nav-arrow" aria-hidden="true">
+              ←
+            </span>
+            <span className="verse-nav-label" lang="te">
+              {prev.label}
+            </span>
+          </Link>
+        ) : (
+          <span className="verse-nav-btn verse-nav-btn-disabled" />
+        )}
+        {next ? (
+          <Link
+            href={`/chapters/${next.chapter}/${next.id}`}
+            className="verse-nav-btn verse-nav-next"
+          >
+            <span className="verse-nav-label" lang="te">
+              {next.label}
+            </span>
+            <span className="verse-nav-arrow" aria-hidden="true">
+              →
+            </span>
+          </Link>
+        ) : (
+          <span className="verse-nav-btn verse-nav-btn-disabled" />
+        )}
+      </nav>
     </main>
   );
 }

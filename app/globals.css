@@ -291,6 +291,119 @@ h1 {
   line-height: 1.6;
 }
 
+/* Verse nav */
+
+.verse-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.verse-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  padding: 0.75rem 1.125rem;
+  font-size: 0.9375rem;
+  transition:
+    transform 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+.verse-nav-btn:hover {
+  border-color: var(--accent);
+}
+
+.verse-nav-btn:active {
+  transform: scale(0.96);
+}
+
+.verse-nav-btn-disabled {
+  visibility: hidden;
+}
+
+.verse-nav-arrow {
+  color: var(--accent);
+}
+
+/* Search / jump */
+
+.search-jump {
+  width: 100%;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.75rem 1.125rem;
+  transition: border-color 150ms ease-out;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.search-results {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.search-result-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  padding: 0.625rem 1rem;
+  transition:
+    transform 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+.search-result-row:hover {
+  border-color: var(--accent);
+}
+
+.search-result-row:active {
+  transform: scale(0.98);
+}
+
+.search-result-label {
+  font-size: 0.8125rem;
+  color: var(--accent);
+}
+
+.search-result-snippet {
+  font-size: 0.9375rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 /* Not found */
 
 .not-found {

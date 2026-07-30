@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ContinueReadingCard } from "./ContinueReadingCard";
+import { SearchJump } from "./SearchJump";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Link href="/chapters" className="button-primary">
           Browse Chapters
         </Link>
+        <SearchJump />
       </div>
     </main>
   );
