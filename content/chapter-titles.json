@@ -1,0 +1,20 @@
+[
+  { "chapter": 1, "numberLabel": "ప్రథమాధ్యాయము", "title": "కురుక్షేత్ర రణరంగమున సైనిక పరిశీలనము" },
+  { "chapter": 2, "numberLabel": "ద్వితీయాధ్యాయము", "title": "గీతాసారము" },
+  { "chapter": 3, "numberLabel": "తృతీయాధ్యాయము", "title": "కర్మయోగము" },
+  { "chapter": 4, "numberLabel": "చతుర్థాధ్యాయము", "title": "దివ్య జ్ఞానము" },
+  { "chapter": 5, "numberLabel": "పంచమాధ్యాయము", "title": "కర్మయోగము – కృష్ణచైతన్యసహితకర్మ" },
+  { "chapter": 6, "numberLabel": "షష్ఠాధ్యాయము", "title": "ధ్యానయోగము" },
+  { "chapter": 7, "numberLabel": "సప్తమాధ్యాయము", "title": "భగవద్విజ్ఞానము" },
+  { "chapter": 8, "numberLabel": "అష్టమాధ్యాయము", "title": "భగవత్రాప్తి" },
+  { "chapter": 9, "numberLabel": "నవమాధ్యాయము", "title": "పరమగుహ్య జ్ఞానము" },
+  { "chapter": 10, "numberLabel": "దశమాధ్యాయము", "title": "భగవద్విభూతి" },
+  { "chapter": 11, "numberLabel": "ఏకాదశాధ్యాయము", "title": "విశ్వరూపము" },
+  { "chapter": 12, "numberLabel": "ద్వాదశాధ్యాయము", "title": "భక్తియోగము" },
+  { "chapter": 13, "numberLabel": "త్రయోదశాధ్యాయము", "title": "ప్రకృతి, పురుషుడు, చైతన్యము" },
+  { "chapter": 14, "numberLabel": "చతుర్దశాధ్యాయము", "title": "ప్రకృతి త్రిగుణములు" },
+  { "chapter": 15, "numberLabel": "పంచదశాధ్యాయము", "title": "పురుషోత్తమ యోగము" },
+  { "chapter": 16, "numberLabel": "షోడశాధ్యాయము", "title": "దైవాసుర స్వభావములు" },
+  { "chapter": 17, "numberLabel": "సప్తదశాధ్యాయము", "title": "శ్రద్ధాత్రయ విభాగములు" },
+  { "chapter": 18, "numberLabel": "అష్టాదశాధ్యాయము", "title": "ఉపసంహారము – సన్న్యాసము యొక్క పరిపూర్ణత్వము" }
+]
