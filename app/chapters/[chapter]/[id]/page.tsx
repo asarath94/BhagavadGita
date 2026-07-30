@@ -6,7 +6,7 @@ import {
   getVerse,
   getVerseIndexForChapter,
 } from "@/lib/content";
-import { BookmarkSaver } from "./BookmarkSaver";
+import { BookmarkButton } from "./BookmarkButton";
 
 export default async function VersePage({
   params,
@@ -35,7 +35,7 @@ export default async function VersePage({
       <h1>Verse {indexEntry.label}</h1>
       {verse ? (
         <>
-          <BookmarkSaver
+          <BookmarkButton
             chapter={chapterNum}
             verseId={verse.id}
             label={verse.label}

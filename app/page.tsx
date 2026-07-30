@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ContinueReadingCard } from "./ContinueReadingCard";
+import { ContinueReadingCards } from "./ContinueReadingCards";
 import { SearchJump } from "./SearchJump";
 
 export default function HomePage() {
@@ -13,11 +13,11 @@ export default function HomePage() {
         <p className="welcome-tagline">
           Read the eighteen chapters in Telugu, verse by verse.
         </p>
-        <ContinueReadingCard />
         <Link href="/chapters" className="button-primary">
           Browse Chapters
         </Link>
         <SearchJump />
+        <ContinueReadingCards />
       </div>
     </main>
   );

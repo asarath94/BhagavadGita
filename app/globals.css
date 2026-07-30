@@ -123,10 +123,7 @@ a {
 }
 
 .continue-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  text-decoration: none;
+  position: relative;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 1rem;
@@ -140,6 +137,15 @@ a {
   transform: scale(0.98);
 }
 
+.continue-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  text-decoration: none;
+  color: inherit;
+  padding-right: 1.5rem;
+}
+
 .continue-card-eyebrow {
   font-size: 0.8125rem;
   color: var(--text-muted);
@@ -150,6 +156,73 @@ a {
 .continue-card-label {
   font-size: 1.0625rem;
   font-weight: 500;
+}
+
+.continue-card-delete {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: var(--accent-soft);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.continue-card-delete:hover {
+  color: var(--accent);
+}
+
+.continue-card-delete:active {
+  transform: scale(0.9);
+}
+
+.continue-card-confirm {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.continue-card-confirm-btn,
+.continue-card-cancel-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  line-height: 1;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 150ms ease-out;
+}
+
+.continue-card-confirm-btn {
+  color: #fff;
+  background: var(--accent);
+}
+
+.continue-card-cancel-btn {
+  color: var(--text-muted);
+  background: var(--accent-soft);
+}
+
+.continue-card-confirm-btn:active,
+.continue-card-cancel-btn:active {
+  transform: scale(0.9);
 }
 
 /* Chapters index */
@@ -208,20 +281,25 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 4.5rem));
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   gap: 0.5rem;
 }
 
 .verse-row {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  width: 4.5rem;
+  text-align: center;
   text-decoration: none;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 0.625rem;
-  padding: 0.5rem 0.875rem;
+  padding: 0.5rem 0.375rem;
   font-size: 0.9375rem;
   transition:
     transform 150ms ease-out,
@@ -244,10 +322,6 @@ h1 {
 
 .verse-row-unavailable:hover {
   border-color: var(--border);
-}
-
-.unavailable-tag {
-  font-size: 0.75rem;
 }
 
 /* Verse detail */
@@ -289,6 +363,88 @@ h1 {
   color: var(--text-muted);
   font-size: 1.0625rem;
   line-height: 1.6;
+}
+
+/* Bookmark */
+
+.bookmark-block {
+  margin: 0 0 2rem;
+}
+
+.bookmark-trigger {
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: transform 150ms ease-out;
+}
+
+.bookmark-trigger:active {
+  transform: scale(0.96);
+}
+
+.bookmark-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.bookmark-input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  transition: border-color 150ms ease-out;
+}
+
+.bookmark-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.bookmark-save {
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: transform 150ms ease-out;
+}
+
+.bookmark-save:active {
+  transform: scale(0.96);
+}
+
+.bookmark-cancel {
+  font: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.bookmark-status {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
 }
 
 /* Verse nav */

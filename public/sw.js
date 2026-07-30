@@ -1,4 +1,4 @@
-// cache-bust: dc208f3c76d38239-GeKDO2wSgBbm_5wm_4gvB
+// cache-bust: dc208f3c76d38239-tkJ3B7HVLtbse2WXR3HsJ
 // Line above is rewritten every build (see generate-precache-manifest.mjs)
 // so this file's bytes always change on a new deploy, code or content —
 // that's what makes the browser's SW update check notice a new version.

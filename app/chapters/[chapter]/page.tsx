@@ -41,9 +41,10 @@ export default async function ChapterPage({
                 <span
                   className="verse-row verse-row-unavailable"
                   aria-disabled="true"
+                  aria-label={`${v.label}, not available yet`}
+                  title="Not available yet"
                 >
                   {v.label}
-                  <span className="unavailable-tag">Not available yet</span>
                 </span>
               )}
             </li>
