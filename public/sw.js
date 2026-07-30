@@ -1,3 +1,8 @@
+// cache-bust: dc208f3c76d38239-GeKDO2wSgBbm_5wm_4gvB
+// Line above is rewritten every build (see generate-precache-manifest.mjs)
+// so this file's bytes always change on a new deploy, code or content —
+// that's what makes the browser's SW update check notice a new version.
+//
 // Hand-rolled service worker: precaches the app shell (routes listed in
 // precache-manifest.json, generated at build time) and cache-first serves
 // everything else too, stashing network responses into a runtime cache so
@@ -12,8 +17,8 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const res = await fetch("/precache-manifest.json");
-      const { version, urls } = await res.json();
-      const cache = await caches.open(SHELL_PREFIX + version);
+      const { version, buildId, urls } = await res.json();
+      const cache = await caches.open(SHELL_PREFIX + version + "-" + buildId);
       await cache.addAll(urls);
       await self.skipWaiting();
     })(),
@@ -24,8 +29,8 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
       const res = await fetch("/precache-manifest.json");
-      const { version } = await res.json();
-      const current = SHELL_PREFIX + version;
+      const { version, buildId } = await res.json();
+      const current = SHELL_PREFIX + version + "-" + buildId;
       const keys = await caches.keys();
       await Promise.all(
         keys

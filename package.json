@@ -4,8 +4,8 @@
   "scripts": {
     "predev": "node scripts/generate-precache-manifest.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/generate-precache-manifest.mjs",
     "build": "next build",
+    "postbuild": "node scripts/generate-precache-manifest.mjs",
     "start": "next start"
   },
   "dependencies": {
